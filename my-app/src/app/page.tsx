@@ -1,13 +1,27 @@
-import Slider from "./slider";
+import Header from "./components/header";
+import Slider from "./components/slider";
 
 export default function Home() {
-  const data = Array.from({ length: 10 }, (_, index) => ({
+  const images = [
+    "/women/zara1.jpg",
+    "/women/zara2.jpg",
+    "/women/zara3.jpg",
+    "/women/zara4.jpg",
+    "/women/zara5.jpg",
+    "/women/zara6.jpg",
+    "/women/zara7.jpg",
+    "/women/zara8.jpg",
+    "/women/zara9.jpg",
+  ];
+
+  const data = Array.from({ length: 9 }, (_, index) => ({
     id: index + 1,
-    color: "#" + Math.floor(Math.random() * 16777215).toString(16),
+    url: images[index],
   }));
 
   return (
     <main className="w-full h-screen bg-green-400 overflow-hidden">
+      <Header />
       <Slider data={data} />
     </main>
   );
